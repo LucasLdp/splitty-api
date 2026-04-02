@@ -5,7 +5,6 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UsersModule } from '@modules/users/users.module';
 import { HttpExceptionFilter } from '@modules/shared/infrastructure/filters/http-exception.filter';
-import { UserService } from './modules/users/infrastructure/service/user.service';
 
 const provider: Provider[] = [
   {
@@ -25,6 +24,6 @@ const provider: Provider[] = [
 @Module({
   imports: [UsersModule],
   controllers: [AppController],
-  providers: [AppService, ...provider, UserService],
+  providers: [AppService, ...provider],
 })
 export class AppModule {}
